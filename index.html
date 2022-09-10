@@ -7,8 +7,8 @@
   
   <title>Calculadora</title>
 
-  <link rel="stylesheet" href="/assets/styles/reset.css">
-  <link rel="stylesheet" href="/assets/styles/styles.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,52 +19,59 @@
 <body>
 
   <section class="container">
-    <h1>Calculadora</h1>
+    <h1 class="titulo">Calculadora</h1>
 
-    <table class="calculadora">
-      <tr>
-        <td colspan="4"><input type="text" class="conta-atual" placeholder="Digite aqui sua conta"></td>
-      </tr>
+    <div class="calculadora">
 
-      <tr>
-        <td colspan="4"><input type="text" class="resultado" placeholder="Resultado"></td>
-      </tr>
+      <div class="container-inputs">
+        <input type="text" class="input-text conta-atual" placeholder="Digite aqui sua conta">
+        <input type="text" class="input-text resultado" placeholder="Resultado">
+      </div>
 
-      <tr>
-        <td><button class="botao botao-clear">C</button></td>
-        <td><button class="botao botao-num">(</button></td>
-        <td><button class="botao botao-num">)</button></td>
-        <td><button class="botao botao-num">/</button></td>
-      </tr>
+      <div class="container-botoes">
+        
+        <div class="linha">
+          <button class="botao botao-clear">DEL</button>
+          <button class="botao botao-num">(</button>
+          <button class="botao botao-num">)</button>
+          <button class="botao botao-num">/</button>
+          <button class="botao botao-num">log</button>
+        </div>
 
-      <tr>
-        <td><button class="botao botao-num">7</button></td>
-        <td><button class="botao botao-num">8</button></td>
-        <td><button class="botao botao-num">9</button></td>
-        <td><button class="botao botao-num">*</button></td>
-      </tr>
+        <div class="linha">
+          <button class="botao botao-num">7</button>
+          <button class="botao botao-num">8</button>
+          <button class="botao botao-num">9</button>
+          <button class="botao botao-num">x</button>
+          <button class="botao botao-num">sen</button>
+        </div>  
 
-      <tr>
-        <td><button class="botao botao-num">4</button></td>
-        <td><button class="botao botao-num">5</button></td>
-        <td><button class="botao botao-num">6</button></td>
-        <td><button class="botao botao-num">+</button></td>
-      </tr>
+        <div class="linha">
+          <button class="botao botao-num">4</button>
+          <button class="botao botao-num">5</button>
+          <button class="botao botao-num">6</button>
+          <button class="botao botao-num">+</button>
+          <button class="botao botao-num">cos</button>
+        </div>
 
-      <tr>
-        <td><button class="botao botao-num">1</button></td>
-        <td><button class="botao botao-num">2</button></td>
-        <td><button class="botao botao-num">3</button></td>
-        <td><button class="botao botao-num">-</button></td>
-      </tr>
+        <div class="linha">
+          <button class="botao botao-num">1</button>
+          <button class="botao botao-num">2</button>
+          <button class="botao botao-num">3</button>
+          <button class="botao botao-num">-</button>
+          <button class="botao botao-num">tan</button>
+        </div>
 
-      <tr>
-        <td><button class="botao botao-num">.</button></td>
-        <td><button class="botao botao-num">0</button></td>
-        <td><button class="botao botao-del">&laquo;</button></td>
-        <td><button class="botao botao-eq"> =</button></td>
-      </tr>
-    </table>
+        <div class="linha">
+          <button class="botao botao-num">.</button>
+          <button class="botao botao-num">0</button>
+          <button class="botao botao-del">RESET</button>
+          <button class="botao botao-eq"> =</button>
+          <button class="botao botao-num">exp</button>
+        </div>
+
+      </div>  
+    </div>
 
   </section>
 
