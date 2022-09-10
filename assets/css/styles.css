@@ -1,0 +1,22 @@
+:root{
+/*Backgrounds*/
+--Background-pagina: hsl(222, 26%, 31%);
+--Background-calculadora: hsl(223, 31%, 20%);
+--Background-input-resultado: hsl(224, 36%, 15%);
+
+/*Botões*/
+--Background-botao-azul: hsl(225, 21%, 49%);
+--Sombra-botao-azul: hsl(224, 28%, 35%);
+--vermelho: hsl(6, 63%, 50%);
+--Sombra-vermelho: hsl(6, 70%, 34%);
+--Background-botao-claro: hsl(30, 25%, 89%);
+--Sombra-botao-claro: hsl(28, 16%, 65%);
+
+/*Texto*/
+--Cor-fonte-botoes: hsl(221, 14%, 31%);
+--Branco: hsl(0, 0, 100%);
+
+/*Tamanho fonte numero*/
+--Font-size-numeros: 32px;
+
+}
