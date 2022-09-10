@@ -58,11 +58,57 @@ body{
     margin: 5px 0px;
     border-radius: 10px;
     font-size: 22px;
+    outline: 0;
 }
 
 .input-text::placeholder{
     color: white;
     font-family: 'League Spartan', sans-serif;
+}
+
+.conta-atual:focus-within{
+    border: 2px solid var(--vermelho);
+}
+
+.resultado-grande:focus-within{
+    border: 2px solid var(--vermelho);
+}
+
+.resultado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-resultado{
+    background-color: var(--Background-input-resultado);
+    color: white;
+    padding: 0.7em 1em;
+    width: 230px;
+    margin: 5px 0px;
+    border-radius: 10px;
+    font-size: 22px;
+    outline: 0;
+}
+
+.input-resultado::placeholder{
+    color: white;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.aproximado{
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    background-color: var(--Background-botao-azul);
+    width: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 0px 0px var(--Sombra-botao-azul);
+}
+
+.aproximado:hover{
+    transform: scale(1.1);
 }
 
 .container-botoes{
