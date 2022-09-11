@@ -17,9 +17,9 @@ function criaCalculadora() {
       clearDisplay(){
         this.display.value=' ';
         document.querySelector(".resultado-grande").value=' ';
-        //document.querySelector(".conta-atual").placeholder = 'Digite aqui seu cálculo';
-        //document.querySelector(".resultado-grande").placeholder="Resultado";
         document.querySelector(".resultado-aproximado").innerHTML="Aprox.";
+        //document.querySelector(".conta-atual").placeholder = "Digite aqui seu cálculo";
+        //document.querySelector(".resultado-grande").placeholder ="Resultado";
 
       },
       apagaUm(){
@@ -37,7 +37,13 @@ function criaCalculadora() {
           }
   
           document.querySelector(".resultado-grande").value = conta;
-          document.querySelector(".resultado-aproximado").innerHTML = conta.toFixed(1);
+
+          if(Number.isInteger(conta)){
+            document.querySelector(".resultado-aproximado").innerHTML = conta
+          }else{
+            document.querySelector(".resultado-aproximado").innerHTML = conta.toFixed(1);
+          }
+          
 
         }catch(e){
           alert('Conta inválida');
@@ -47,11 +53,80 @@ function criaCalculadora() {
       cliqueBotoes(){
         document.addEventListener('click',function(e){
           const el = e.target;
+          
           if(el.classList.contains('botao-num')){
             this.btnParaDisplay(el.innerText);
             this.display.focus();
           }
+
+          if(el.classList.contains('quadrado')){
+            let conta = this.display.value;
+            document.querySelector(".resultado-grande").value = conta*conta;
+            this.display.focus();
+          }
+
+          if(el.classList.contains('cubo')){
+            let conta = this.display.value;
+            document.querySelector(".resultado-grande").value = conta*conta*conta;
+            this.display.focus();
+          }
+
+          if(el.classList.contains('raiz-quadrada')){
+            let conta = this.display.value;
+            document.querySelector(".resultado-grande").value = Math.sqrt(conta);
+            this.display.focus();
+          }
+
+          if(el.classList.contains('raiz-cubica')){
+            let conta = this.display.value;
+            document.querySelector(".resultado-grande").value = Math.cbrt(conta);
+            this.display.focus();
+          }
   
+          if(el.classList.contains('seno')){
+            let conta = this.display.value;
+            document.querySelector(".resultado-grande").value = Math.sin(conta);
+            this.display.focus();
+          }
+
+          if(el.classList.contains('ln')){
+            let conta = this.display.value;
+            document.querySelector(".resultado-grande").value = Math.log(conta);
+            this.display.focus();
+          }
+
+          if(el.classList.contains('coseno')){
+            let conta = this.display.value;
+            document.querySelector(".resultado-grande").value = Math.cos(conta);
+            this.display.focus();
+          }
+
+          if(el.classList.contains('fatorial')){
+            let conta = this.display.value;
+            document.querySelector(".resultado-grande").value = fazFatorial(conta);
+            this.display.focus();
+            
+                function fazFatorial(conta){
+                    let fat = 1
+                    for(let c = conta; c > 1; c--){
+                        fat *= c;
+                    }
+                    return fat
+                }
+            }
+
+          if(el.classList.contains('tangente')){
+            let conta = this.display.value;
+            document.querySelector(".resultado-grande").value = Math.tan(conta);
+            this.display.focus();
+          }
+
+          if(el.classList.contains('pi')){
+            let conta = this.display.value;
+            document.querySelector(".resultado-grande").value = conta * 3.14159265359;
+            this.display.focus();
+          }
+
           if(el.classList.contains('botao-clear')){
             this.clearDisplay();
           }
@@ -63,6 +138,7 @@ function criaCalculadora() {
           if(el.classList.contains('botao-eq')){
             this.realizaConta();
           }
+
         }.bind(this));
       },
       btnParaDisplay(valor){
