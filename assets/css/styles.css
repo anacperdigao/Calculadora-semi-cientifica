@@ -70,10 +70,6 @@ body{
     border: 2px solid var(--vermelho);
 }
 
-.resultado-grande:focus-within{
-    border: 2px solid var(--vermelho);
-}
-
 .resultado{
     display: flex;
     flex-direction: row;
@@ -101,7 +97,7 @@ body{
     background-color: var(--Background-input-resultado);
     color: white;
     padding: 0.7em 1em;
-    width: 100px;
+    width: 110px;
     margin: 5px 0px;
     border-radius: 10px;
     font-size: 22px;
@@ -112,7 +108,6 @@ body{
 .resultado-aproximado::placeholder{
     color: white;
     font-family: 'League Spartan', sans-serif;
-    text-align: center;
 }
 
 .aproximado{

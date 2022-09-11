@@ -15,12 +15,9 @@ function criaCalculadora() {
         })
       },
       clearDisplay(){
-        this.display.value=' ';
-        document.querySelector(".resultado-grande").value=' ';
-        document.querySelector(".resultado-aproximado").innerHTML="Aprox.";
-        //document.querySelector(".conta-atual").placeholder = "Digite aqui seu cálculo";
-        //document.querySelector(".resultado-grande").placeholder ="Resultado";
-
+        this.display.value="";
+        document.querySelector(".resultado-grande").value="";
+        document.querySelector(".resultado-aproximado").value="";
       },
       apagaUm(){
         this.display.value = this.display.value.slice(0, -1);
@@ -35,21 +32,23 @@ function criaCalculadora() {
             alert('Conta inválida');
             return;
           }
-  
-          document.querySelector(".resultado-grande").value = conta;
-
-          if(Number.isInteger(conta)){
-            document.querySelector(".resultado-aproximado").innerHTML = conta
-          }else{
-            document.querySelector(".resultado-aproximado").innerHTML = conta.toFixed(1);
-          }
-          
 
         }catch(e){
           alert('Conta inválida');
           return;
         }
+        
+        document.querySelector(".resultado-grande").value = conta;
+        
+        if(Number.isInteger(conta)){
+            document.querySelector(".resultado-aproximado").value = String(conta);
+        }else{
+            document.querySelector(".resultado-aproximado").value = String(conta.toFixed(1));
+        }
+
+        
       },
+
       cliqueBotoes(){
         document.addEventListener('click',function(e){
           const el = e.target;
@@ -57,6 +56,7 @@ function criaCalculadora() {
           if(el.classList.contains('botao-num')){
             this.btnParaDisplay(el.innerText);
             this.display.focus();
+
           }
 
           if(el.classList.contains('quadrado')){
@@ -85,7 +85,7 @@ function criaCalculadora() {
   
           if(el.classList.contains('seno')){
             let conta = this.display.value;
-            document.querySelector(".resultado-grande").value = Math.sin(conta);
+            document.querySelector(".resultado-grande").value = `${Math.sin(conta)} rad.`;
             this.display.focus();
           }
 
@@ -97,7 +97,7 @@ function criaCalculadora() {
 
           if(el.classList.contains('coseno')){
             let conta = this.display.value;
-            document.querySelector(".resultado-grande").value = Math.cos(conta);
+            document.querySelector(".resultado-grande").value = `${Math.cos(conta)} rad.`;
             this.display.focus();
           }
 
@@ -117,7 +117,7 @@ function criaCalculadora() {
 
           if(el.classList.contains('tangente')){
             let conta = this.display.value;
-            document.querySelector(".resultado-grande").value = Math.tan(conta);
+            document.querySelector(".resultado-grande").value = `${Math.tan(conta)} rad.`;
             this.display.focus();
           }
 
