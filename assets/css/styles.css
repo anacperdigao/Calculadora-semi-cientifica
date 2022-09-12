@@ -63,7 +63,7 @@ body{
     padding: 0.5em 1.6em;
     width: 550px;
     border-radius: 10px 10px 0px 0px;
-    font-size: 14px;
+    font-size: 16px;
     outline: 0;
     text-align: end;
 }
@@ -73,7 +73,7 @@ body{
     color: gray;
 }
 
-.input-text{
+.conta-atual{
     background-color: var(--Background-input-resultado);
     color: white;
     padding: 0.7em 1em;
@@ -83,7 +83,7 @@ body{
     outline: 0;
 }
 
-.input-text::placeholder{
+.conta-atual::placeholder{
     color: white;
     font-family: 'League Spartan', sans-serif;
 }
