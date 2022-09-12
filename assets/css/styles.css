@@ -39,7 +39,7 @@ body{
 }
 
 .titulo{
-    font-size: 42px;
+    font-size: 34px;
     font-weight: 700;
     color: white;
     margin-bottom: 10px;
@@ -51,13 +51,34 @@ body{
     margin-bottom: 10px;
 }
 
+.input-atual-memoria{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.calculo-memoria{
+    background-color: var(--Background-input-resultado);
+    color: gray;
+    padding: 0.5em 1.6em;
+    width: 550px;
+    border-radius: 10px 10px 0px 0px;
+    font-size: 14px;
+    outline: 0;
+    text-align: end;
+}
+
+.calculo-memoria::placeholder{
+    font-family: 'League Spartan', sans-serif;
+    color: gray;
+}
+
 .input-text{
     background-color: var(--Background-input-resultado);
     color: white;
     padding: 0.7em 1em;
     width: 550px;
-    margin: 5px 0px;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
     font-size: 22px;
     outline: 0;
 }
@@ -67,8 +88,8 @@ body{
     font-family: 'League Spartan', sans-serif;
 }
 
-.conta-atual:focus-within{
-    border: 2px solid var(--vermelho);
+.input-atual-memoria:focus-within{
+    outline: 2px solid var(--vermelho);
 }
 
 .resultado{
@@ -82,8 +103,8 @@ body{
     background-color: var(--Background-input-resultado);
     color: white;
     padding: 0.7em 1em;
-    width: 340px;
-    margin: 5px 0px;
+    width: 330px;
+    margin: 10px 0px 5px 0px;
     border-radius: 10px 0px 0px 10px;
     font-size: 22px;
     outline: 0;
@@ -101,7 +122,7 @@ body{
     color: white;
     height: 50px;
     width: 50px;
-    margin: 5px 0px;
+    margin: 10px 0px 5px 0px;
     border-radius: 0px 10px 10px 0px;
     font-size: 30px;
     text-align: center;
@@ -124,10 +145,10 @@ body{
     background-color: var(--Background-input-resultado);
     color: white;
     padding: 0.7em 1em;
-    width: 100px;
-    margin: 5px 0px;
+    width: 110px;
+    margin: 10px 0px 5px 0px;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 22px;
     outline: 0;
     text-align: center;
 }

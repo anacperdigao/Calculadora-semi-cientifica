@@ -20,6 +20,7 @@ function criaCalculadora() {
         this.display.value="";
         document.querySelector(".resultado-grande").value="";
         document.querySelector(".resultado-aproximado").value="";
+        document.querySelector(".calculo-memoria").value=""
       },
 
       apagaUm(){
@@ -165,9 +166,11 @@ function criaCalculadora() {
           }
 
           if(el.classList.contains('seta-up')){
+            document.querySelector(".calculo-memoria").value = this.display.value
             this.display.value = document.querySelector(".resultado-grande").value
             document.querySelector(".resultado-grande").value = ""
             document.querySelector(".resultado-aproximado").value = ""
+            
           }
 
         }.bind(this));
