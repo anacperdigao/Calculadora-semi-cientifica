@@ -18,9 +18,9 @@ function criaCalculadora() {
 
       clearDisplay(){
         this.display.value="";
-        document.querySelector(".resultado-grande").value="";
-        document.querySelector(".resultado-aproximado").value="";
-        document.querySelector(".calculo-memoria").value=""
+        document.querySelector(".resultado-grande").innerHTML="Resultado";
+        document.querySelector(".resultado-aproximado").innerHTML="Aprox.";
+        document.querySelector(".calculo-memoria").innerHTML="Cálculo anterior"
       },
 
       apagaUm(){
@@ -43,16 +43,16 @@ function criaCalculadora() {
           return;
         }
         
-        document.querySelector(".resultado-grande").value = conta;
+        document.querySelector(".resultado-grande").innerHTML = conta;
         this.aproximaResultado(conta);
       },
 
       aproximaResultado(conta){
 
         if(Number.isInteger(conta)){
-            document.querySelector(".resultado-aproximado").value = conta;
+            document.querySelector(".resultado-aproximado").innerHTML = conta;
         }else{
-            document.querySelector(".resultado-aproximado").value = conta.toFixed(1);
+            document.querySelector(".resultado-aproximado").innerHTML = conta.toFixed(1);
         }
       },
 
@@ -68,7 +68,7 @@ function criaCalculadora() {
           if(el.classList.contains('quadrado')){
             let valor = this.display.value;
             let conta = valor*valor
-            document.querySelector(".resultado-grande").value = conta;
+            document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
@@ -76,7 +76,7 @@ function criaCalculadora() {
           if(el.classList.contains('cubo')){
             let valor = this.display.value;
             let conta = valor*valor*valor;
-            document.querySelector(".resultado-grande").value = conta;
+            document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
@@ -84,7 +84,7 @@ function criaCalculadora() {
           if(el.classList.contains('raiz-quadrada')){
             let valor = this.display.value;
             let conta = Math.sqrt(valor);
-            document.querySelector(".resultado-grande").value = conta;
+            document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
@@ -92,7 +92,7 @@ function criaCalculadora() {
           if(el.classList.contains('raiz-cubica')){
             let valor = this.display.value;
             let conta = Math.cbrt(valor)
-            document.querySelector(".resultado-grande").value = conta;
+            document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
@@ -100,7 +100,7 @@ function criaCalculadora() {
           if(el.classList.contains('seno')){
             let valor = this.display.value;
             let conta = Math.sin(valor);
-            document.querySelector(".resultado-grande").value = conta;
+            document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
@@ -108,7 +108,7 @@ function criaCalculadora() {
           if(el.classList.contains('ln')){
             let valor = this.display.value;
             let conta = Math.log(valor);
-            document.querySelector(".resultado-grande").value = conta;
+            document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
@@ -116,7 +116,7 @@ function criaCalculadora() {
           if(el.classList.contains('coseno')){
             let valor = this.display.value;
             let conta = Math.cos(valor);
-            document.querySelector(".resultado-grande").value = conta;
+            document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
@@ -124,7 +124,7 @@ function criaCalculadora() {
           if(el.classList.contains('fatorial')){
             let valor = this.display.value;
             let conta = fazFatorial(valor);
-            document.querySelector(".resultado-grande").value = conta;
+            document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
             
@@ -140,7 +140,7 @@ function criaCalculadora() {
           if(el.classList.contains('tangente')){
             let valor = this.display.value;
             let conta = Math.tan(valor);
-            document.querySelector(".resultado-grande").value = conta;
+            document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
@@ -148,7 +148,7 @@ function criaCalculadora() {
           if(el.classList.contains('pi')){
             let valor = this.display.value;
             let conta = valor * 3.14159265359;
-            document.querySelector(".resultado-grande").value = conta;
+            document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
@@ -166,10 +166,10 @@ function criaCalculadora() {
           }
 
           if(el.classList.contains('seta-up')){
-            document.querySelector(".calculo-memoria").value = this.display.value
-            this.display.value = document.querySelector(".resultado-grande").value
-            document.querySelector(".resultado-grande").value = ""
-            document.querySelector(".resultado-aproximado").value = ""
+            document.querySelector(".calculo-memoria").innerHTML = this.display.value
+            this.display.value = document.querySelector(".resultado-grande").innerHTML
+            document.querySelector(".resultado-grande").innerHTML = "Resultado"
+            document.querySelector(".resultado-aproximado").innerHTML = "Aprox."
             
           }
 

@@ -104,6 +104,7 @@ body{
     color: white;
     padding: 0.7em 1em;
     width: 330px;
+    height: 53px;
     margin: 10px 0px 5px 0px;
     border-radius: 10px 0px 0px 10px;
     font-size: 22px;
@@ -120,7 +121,7 @@ body{
 .seta-up{
     background-color: var(--Sombra-vermelho);
     color: white;
-    height: 50px;
+    height: 53px;
     width: 50px;
     margin: 10px 0px 5px 0px;
     border-radius: 0px 10px 10px 0px;
@@ -146,6 +147,7 @@ body{
     color: white;
     padding: 0.7em 1em;
     width: 110px;
+    height: 53px;
     margin: 10px 0px 5px 0px;
     border-radius: 10px;
     font-size: 22px;
