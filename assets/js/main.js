@@ -43,6 +43,7 @@ function criaCalculadora() {
         }
         
         document.querySelector(".resultado-grande").value = conta;
+        this.aproximaResultado(conta);
       },
 
       aproximaResultado(conta){
@@ -97,7 +98,7 @@ function criaCalculadora() {
   
           if(el.classList.contains('seno')){
             let valor = this.display.value;
-            let conta = `${Math.sin(valor)} rad.`;
+            let conta = Math.sin(valor);
             document.querySelector(".resultado-grande").value = conta;
             this.aproximaResultado(conta);
             this.display.focus();
@@ -113,7 +114,7 @@ function criaCalculadora() {
 
           if(el.classList.contains('coseno')){
             let valor = this.display.value;
-            let conta = `${Math.cos(valor)} rad.`;
+            let conta = Math.cos(valor);
             document.querySelector(".resultado-grande").value = conta;
             this.aproximaResultado(conta);
             this.display.focus();
@@ -137,7 +138,7 @@ function criaCalculadora() {
 
           if(el.classList.contains('tangente')){
             let valor = this.display.value;
-            let conta = `${Math.tan(valor)} rad.`;
+            let conta = Math.tan(valor);
             document.querySelector(".resultado-grande").value = conta;
             this.aproximaResultado(conta);
             this.display.focus();
@@ -161,6 +162,12 @@ function criaCalculadora() {
   
           if(el.classList.contains('botao-eq')){
             this.realizaConta();
+          }
+
+          if(el.classList.contains('seta-up')){
+            this.display.value = document.querySelector(".resultado-grande").value
+            document.querySelector(".resultado-grande").value = ""
+            document.querySelector(".resultado-aproximado").value = ""
           }
 
         }.bind(this));

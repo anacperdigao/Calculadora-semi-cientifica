@@ -8,6 +8,7 @@
 --Background-botao-azul: hsl(225, 21%, 49%);
 --Sombra-botao-azul: hsl(224, 28%, 35%);
 --vermelho: hsl(6, 63%, 50%);
+--vermelho-seta: hsl(6, 63%, 61%);
 --Sombra-vermelho: hsl(6, 70%, 34%);
 --Background-botao-claro: hsl(30, 25%, 89%);
 --Sombra-botao-claro: hsl(28, 16%, 65%);
@@ -81,11 +82,37 @@ body{
     background-color: var(--Background-input-resultado);
     color: white;
     padding: 0.7em 1em;
-    width: 380px;
+    width: 340px;
     margin: 5px 0px;
-    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
     font-size: 22px;
     outline: 0;
+}
+
+.resultado-seta{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.seta-up{
+    background-color: var(--Sombra-vermelho);
+    color: white;
+    height: 50px;
+    width: 50px;
+    margin: 5px 0px;
+    border-radius: 0px 10px 10px 0px;
+    font-size: 30px;
+    text-align: center;
+    outline: 0;
+    cursor: pointer;
+    font-weight: bold;
+    justify-self: center;
+}
+
+.seta-up:hover{
+    background-color: var(--vermelho);
 }
 
 .resultado-grande::placeholder{
@@ -97,10 +124,10 @@ body{
     background-color: var(--Background-input-resultado);
     color: white;
     padding: 0.7em 1em;
-    width: 110px;
+    width: 100px;
     margin: 5px 0px;
     border-radius: 10px;
-    font-size: 22px;
+    font-size: 20px;
     outline: 0;
     text-align: center;
 }
