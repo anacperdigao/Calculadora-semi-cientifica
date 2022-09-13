@@ -59,6 +59,8 @@ function criaCalculadora() {
       cliqueBotoes(){
         document.addEventListener('click',(e) => {
           const el = e.target;
+          let valor = this.display.value;
+          
           
           if(el.classList.contains('botao-num')){
             this.btnParaDisplay(el.innerText);
@@ -66,64 +68,64 @@ function criaCalculadora() {
           }
 
           if(el.classList.contains('quadrado')){
-            let valor = this.display.value;
             let conta = valor*valor
+            this.display.value = `${this.display.value}²`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
 
           if(el.classList.contains('cubo')){
-            let valor = this.display.value;
             let conta = valor*valor*valor;
+            this.display.value = `${this.display.value}³`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
 
           if(el.classList.contains('raiz-quadrada')){
-            let valor = this.display.value;
             let conta = Math.sqrt(valor);
+            this.display.value = `√${this.display.value}`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
 
           if(el.classList.contains('raiz-cubica')){
-            let valor = this.display.value;
             let conta = Math.cbrt(valor)
+            this.display.value = `∛${this.display.value}`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
   
           if(el.classList.contains('seno')){
-            let valor = this.display.value;
             let conta = Math.sin(valor);
+            this.display.value = `sen ${this.display.value}`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
 
           if(el.classList.contains('ln')){
-            let valor = this.display.value;
             let conta = Math.log(valor);
+            this.display.value = `ln ${this.display.value}`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
 
           if(el.classList.contains('coseno')){
-            let valor = this.display.value;
             let conta = Math.cos(valor);
+            this.display.value = `cos ${this.display.value}`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
 
           if(el.classList.contains('fatorial')){
-            let valor = this.display.value;
             let conta = fazFatorial(valor);
+            this.display.value = `${this.display.value}!`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
@@ -138,17 +140,17 @@ function criaCalculadora() {
             }
 
           if(el.classList.contains('tangente')){
-            let valor = this.display.value;
             let conta = Math.tan(valor);
+            this.display.value = `tan ${this.display.value}`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
             this.display.focus();
           }
 
           if(el.classList.contains('pi')){
-            let valor = this.display.value;
             let conta = valor * 3.14159265359;
             document.querySelector(".resultado-grande").innerHTML = conta;
+            this.display.value = `${this.display.value} π`;
             this.aproximaResultado(conta);
             this.display.focus();
           }
@@ -169,16 +171,15 @@ function criaCalculadora() {
             document.querySelector(".calculo-memoria").innerHTML = this.display.value
             this.display.value = document.querySelector(".resultado-grande").innerHTML
             document.querySelector(".resultado-grande").innerHTML = "Resultado"
-            document.querySelector(".resultado-aproximado").innerHTML = "Aprox."
-            
+            document.querySelector(".resultado-aproximado").innerHTML = "Aprox." 
           }
-
         });
       },
 
       btnParaDisplay(valor){
         this.display.value += valor;
-      }, 
+      },
+
     };
   }
   
