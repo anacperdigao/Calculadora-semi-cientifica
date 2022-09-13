@@ -57,7 +57,7 @@ function criaCalculadora() {
       },
 
       cliqueBotoes(){
-        document.addEventListener('click',function(e){
+        document.addEventListener('click',(e) => {
           const el = e.target;
           
           if(el.classList.contains('botao-num')){
@@ -173,7 +173,7 @@ function criaCalculadora() {
             
           }
 
-        }.bind(this));
+        });
       },
 
       btnParaDisplay(valor){
