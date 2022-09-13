@@ -34,21 +34,20 @@ function criaCalculadora() {
           conta = eval(conta);
   
           if(!conta){
-            alert('Conta inválida');
-            return;
+            alert('Conta inválida! \nSe estiver usando a parte científica, aqui vão algumas instruções:\n\n- Primeiro aperte o número e depois a função que desejar. \n- Para a função científica funcionar, no display de cálculo só pode haver um número. Não podem ter expressões como 2+2.');
+            return this.clearDisplay();
           }
 
         }catch(e){
-          alert('Conta inválida');
-          return;
+          alert('Conta inválida! \nSe estiver usando a parte científica, aqui vão algumas instruções:\n\n- Primeiro aperte o número e depois a função que desejar.\n- Para a função científica funcionar, no display de cálculo só pode haver um número. Não podem ter expressões como 2+2.');
+          return this.clearDisplay();
         }
-        
+
         document.querySelector(".resultado-grande").innerHTML = conta;
         this.aproximaResultado(conta);
       },
 
       aproximaResultado(conta){
-
         if(Number.isInteger(conta)){
             document.querySelector(".resultado-aproximado").innerHTML = conta;
         }else{
@@ -56,11 +55,18 @@ function criaCalculadora() {
         }
       },
 
+      trataErroNan(){
+        if(isNaN(document.querySelector(".resultado-grande").innerHTML)){
+          alert('Conta inválida! \nSe estiver usando a parte científica, aqui vão algumas instruções:\n\n- Primeiro aperte o número e depois a função que desejar. \n- Para a função científica funcionar, no display de cálculo só pode haver um número. Não podem ter expressões como 2+2.');
+          this.clearDisplay();
+          return ;
+        }
+      },
+
       cliqueBotoes(){
         document.addEventListener('click',(e) => {
           const el = e.target;
-          let valor = this.display.value;
-          
+          const valor = this.display.value;
           
           if(el.classList.contains('botao-num')){
             this.btnParaDisplay(el.innerText);
@@ -72,6 +78,7 @@ function criaCalculadora() {
             this.display.value = `${this.display.value}²`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
+            this.trataErroNan();
             this.display.focus();
           }
 
@@ -80,6 +87,7 @@ function criaCalculadora() {
             this.display.value = `${this.display.value}³`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
+            this.trataErroNan();
             this.display.focus();
           }
 
@@ -88,6 +96,7 @@ function criaCalculadora() {
             this.display.value = `√${this.display.value}`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
+            this.trataErroNan();
             this.display.focus();
           }
 
@@ -96,6 +105,7 @@ function criaCalculadora() {
             this.display.value = `∛${this.display.value}`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
+            this.trataErroNan();
             this.display.focus();
           }
   
@@ -104,6 +114,7 @@ function criaCalculadora() {
             this.display.value = `sen ${this.display.value}`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
+            this.trataErroNan();
             this.display.focus();
           }
 
@@ -112,6 +123,7 @@ function criaCalculadora() {
             this.display.value = `ln ${this.display.value}`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
+            this.trataErroNan();
             this.display.focus();
           }
 
@@ -120,6 +132,7 @@ function criaCalculadora() {
             this.display.value = `cos ${this.display.value}`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
+            this.trataErroNan();
             this.display.focus();
           }
 
@@ -128,6 +141,7 @@ function criaCalculadora() {
             this.display.value = `${this.display.value}!`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
+            this.trataErroNan();
             this.display.focus();
             
                 function fazFatorial(valor){
@@ -144,6 +158,7 @@ function criaCalculadora() {
             this.display.value = `tan ${this.display.value}`;
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.aproximaResultado(conta);
+            this.trataErroNan();
             this.display.focus();
           }
 
@@ -152,6 +167,7 @@ function criaCalculadora() {
             document.querySelector(".resultado-grande").innerHTML = conta;
             this.display.value = `${this.display.value} π`;
             this.aproximaResultado(conta);
+            this.trataErroNan();
             this.display.focus();
           }
 
