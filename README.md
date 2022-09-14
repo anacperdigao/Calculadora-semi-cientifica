@@ -19,16 +19,17 @@
 <br>
 <h2 align="center">:hammer: Funcionalidades do projeto </h2>
 
-- ``Funcionalidade 1:`` 
-- ``Funcionalidade 2:`` 
-- ``Funcionalidade 3:`` 
-- ``Funcionalidade 4:`` 
-- ``Funcionalidade 5:`` 
+- ``Funcionalidade 1:`` Contas aritméticas mais usuais e funcionalidade de calculadora científica como seno, log, fatorial...
+- ``Funcionalidade 2:`` Display de resultado separado do display da conta, para o usuário poder continuar a conta se desejar e não ter que refazer.
+- ``Funcionalidade 3:`` Display menor com a memória do cálculo anterior para o usuário lembrar de onde surgiu o resultado.
+- ``Funcionalidade 4:`` Opção de usar o teclado na tela ou o teclado do computadora, inclusive dando enter pra ver o resultado.
 
 
 <br>
-<h2 align="center"> :dart: Objetivo de aprendizado </h2>
-<p></p>
+<h2 align="center"> :dart: Objetivo de aprendizado/O que aprendi </h2>
+<p>O objetivo desse projeto era treinar mais Javascript. Interessante é que eu usei conceitos de factory functions, onde todo o seu return é um objeto, e por isso todo o código está dentro de uma função apenas, e dentro dessa função temos objetos e métodos, onde cada método é uma funcionalidade da calculadora. </p>
+<p>Nesse projeto consolidei também o uso do "this", e que por exemplo, eu posso usar o método bind() no final do objeto pra travar o this do escopo inicial, ou eu posso simplesmente usar uma arrow function que também trava o this no escopo inicial.</p>
+<p>Além disso, utilizei um objeto embutido do JS chamado Math, que tem propriedades e métodos para constantes e funções matemáticas.</p>
 
 
 <br>
